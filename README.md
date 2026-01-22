@@ -1,4 +1,4 @@
-# This is a minimal Python API that will be used for Python web services I'll expose through the use of API endpoints.
+This is a minimal Python API that will be used for Python web services I'll expose through the use of API endpoints.
 
 # Features
 
