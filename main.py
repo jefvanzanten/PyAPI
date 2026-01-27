@@ -9,7 +9,14 @@ executor = ThreadPoolExecutor(max_workers=4)
 # CORS for access of the client application
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:4173", "http://localhost:5174", "http://localhost:4321"],
+    allow_origins=[
+        "http://localhost:5173", 
+        "http://localhost:4173", 
+        "http://localhost:5174", 
+        "http://localhost:4321",
+        "https://jefvanzanten.dev",       # JOUW PUBLIEKE DOMEIN
+        "https://www.jefvanzanten.dev",
+    ],
     allow_methods=["POST"],
     allow_headers=["Content-Type"],
 )
@@ -24,4 +31,4 @@ async def health_check():
 if __name__ == "__main__":
     """ To listen to clients the application needs uvicorn """
     import uvicorn
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
