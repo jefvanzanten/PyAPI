@@ -19,7 +19,7 @@ router = APIRouter(prefix="/email", tags=["email"])
 async def send_contact_email(form: ContactForm):
     try:
         resend.Emails.send({
-            "from": "onboarding@resend.dev",
+            "from": "noreply@jefvanzanten.dev",
             "to": "j.van.zanten@gmail.com",
             "subject": f"Nieuw bericht van {form.name}",
             "html": f"<p><strong>Van:</strong> {form.name} ({form.email})</p><p>{form.message}</p>"
